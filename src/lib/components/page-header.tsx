@@ -50,6 +50,7 @@ export default function PageHeader({ title, trail, intro, image, children }: Pro
           ratio="3 / 2"
           sizes="(min-width: 1024px) 30vw, (min-width: 640px) 56vw, 54vw"
           intro
+          parallax
           contain={image.contain}
           className="col-span-10 sm:col-span-7 lg:col-span-4"
         />

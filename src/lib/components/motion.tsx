@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation"
 import { useEffect } from "react"
 
 // One IntersectionObserver for the whole site. It adds `is-in` to anything that reveals on
-// entry (text with data-reveal, photographs with .restore or .revive). No scroll listeners and
+// entry (text with data-reveal, photographs with .unmask or .settle). No scroll listeners and
 // no animation loops: the motion itself is CSS. Above-the-fold content uses data-intro instead,
 // which is pure CSS and does not wait for this script.
 let io: IntersectionObserver | null = null
@@ -22,7 +22,7 @@ function scan() {
     { rootMargin: "0px 0px -6% 0px", threshold: 0.08 },
   )
   document
-    .querySelectorAll("[data-reveal]:not(.is-in), .restore:not(.is-in):not([data-intro]), .revive:not(.is-in)")
+    .querySelectorAll("[data-reveal]:not(.is-in), .unmask:not(.is-in):not([data-intro]), .settle:not(.is-in)")
     .forEach((el) => io!.observe(el))
 }
 

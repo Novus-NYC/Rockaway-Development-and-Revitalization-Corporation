@@ -52,7 +52,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                   {w.photos.map((src, k) => {
                     const m = media(src)
                     return (
-                      <span key={src} className={`disc revive w-[min(46%,11rem)] ${k ? "-ml-[8%] ring-4 ring-paper" : ""}`}>
+                      <span key={src} className={`disc settle w-[min(46%,11rem)] ${k ? "-ml-[8%] ring-4 ring-paper" : ""}`}>
                         <Image src={m.src} alt={w.photos.length > 1 ? w.name.split(" & ")[k] ?? w.name : w.name} width={200} height={Math.round((200 * m.h) / m.w)} />
                       </span>
                     )

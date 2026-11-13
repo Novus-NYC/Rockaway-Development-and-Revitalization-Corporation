@@ -112,7 +112,7 @@ export function Blocks({ blocks, level = 2, zoom, imageSizes = "(min-width: 64re
           case "img": {
             const alt = b.alt && !/^[\w-]+$/.test(b.alt) ? b.alt : b.caption ? textOf(b.caption) : fallbackAlt
             const photo = (
-              <Photo key={i} src={b.src} alt={alt} sizes={imageSizes} reveal="color" zoom={zoom && !b.href} caption={b.caption ? <Rich c={b.caption} /> : undefined} className="!my-7" />
+              <Photo key={i} src={b.src} alt={alt} sizes={imageSizes} reveal="settle" zoom={zoom && !b.href} caption={b.caption ? <Rich c={b.caption} /> : undefined} className="!my-7" />
             )
             return b.href && b.href !== "#" ? (
               <a key={i} href={b.href} target={external(b.href) ? "_blank" : undefined} rel={external(b.href) ? "noopener noreferrer" : undefined} className="block">

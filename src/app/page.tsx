@@ -23,13 +23,13 @@ const areaImages: Record<string, { src: string; alt: string }> = {
   "/commercial-revitalization/": { src: "/media/home/area-commercial-revitalization.jpg", alt: "A commercial building on a Downtown Far Rockaway corner" },
 }
 
-const eoe = media("/media/2021/10/DYCD-RDRC-Pronouns.webp")
+const dycd = media("/media/2019/05/NYC-DYCDLogo.webp")
 
 export default function HomePage() {
   return (
     <>
       <section className="relative overflow-clip">
-        <Seal className="pointer-events-none absolute -right-[9vw] -top-[13vw] w-[54vw] max-w-[50rem] text-mist max-lg:-right-[38vw] max-lg:-top-[20vw] max-lg:w-[120vw]" />
+        <Seal className="hero-seal pointer-events-none absolute -right-[9vw] -top-[13vw] w-[54vw] max-w-[50rem] text-mist max-lg:-right-[38vw] max-lg:-top-[20vw] max-lg:w-[120vw]" />
         <div className="wrap grid12 relative items-end gap-y-10 pb-[var(--s-normal)] pt-[clamp(2.5rem,6vw,6rem)]">
           <div className="col-span-12 lg:col-span-7 lg:pb-[clamp(1rem,3vw,3.5rem)]">
             <h1 className="t-label" data-intro>
@@ -51,28 +51,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="areas relative overflow-clip bg-violet text-paper" aria-labelledby="areas-heading">
-        <Seal className="pointer-events-none absolute -bottom-[22vw] -left-[14vw] w-[52vw] max-w-[46rem] text-[#3a2170] max-lg:hidden" />
-        <div className="wrap grid12 relative gap-y-6 py-[var(--s-normal)]">
-          <h2 id="areas-heading" className="t-h2 col-span-12 !text-paper lg:col-span-4" data-reveal="wipe">
-            <span className="wipe">Areas of focus</span>
-          </h2>
-          <ul className="areas__list col-span-12 lg:col-span-8">
-            {areas.map((a, i) => {
-              const img = media(areaImages[a.href].src)
-              return (
-                <li key={a.href} data-reveal style={{ "--i": i } as React.CSSProperties}>
-                  <Link href={a.href} className="area-row group">
-                    <span className="area-row__name font-display text-[clamp(1.625rem,1.1rem+2.2vw,3.125rem)] leading-[1.06] tracking-[-0.02em]">{a.label}</span>
-                    <span className="area-row__thumb">
-                      <Image src={img.src} alt={areaImages[a.href].alt} width={224} height={156} />
-                    </span>
-                    <span className="arrow text-xl text-brass-light max-sm:hidden" aria-hidden="true">→</span>
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
+      {/* Areas of focus. On a wide screen the section holds still while the page scrolls and the
+          four areas take their turn (CSS scroll timeline, see globals.css). Everywhere else it
+          is a plain list with thumbnails. */}
+      <section className="areas relative bg-violet text-paper" aria-labelledby="areas-heading">
+        <div className="areas__track">
+          <div className="areas__stage">
+            <Seal className="areas__seal pointer-events-none absolute -bottom-[22vw] -left-[14vw] w-[52vw] max-w-[46rem] text-[#3a2170] max-lg:hidden" />
+            <div className="areas__grid wrap relative">
+              <h2 id="areas-heading" className="areas__head t-h2 !text-paper" data-reveal="wipe">
+                <span className="wipe">Areas of focus</span>
+              </h2>
+              <ul className="areas__list">
+                {areas.map((a, i) => {
+                  const img = media(areaImages[a.href].src)
+                  return (
+                    <li key={a.href} data-reveal style={{ "--i": i } as React.CSSProperties}>
+                      <Link href={a.href} className="area-row group">
+                        <span className="area-row__name font-display text-[clamp(1.625rem,1.1rem+2.2vw,3.125rem)] leading-[1.06] tracking-[-0.02em]">{a.label}</span>
+                        <span className="area-row__thumb">
+                          <Image src={img.src} alt={areaImages[a.href].alt} width={224} height={156} />
+                        </span>
+                        <span className="arrow text-xl text-brass-light max-sm:hidden" aria-hidden="true">→</span>
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+              {/* The large photographs of the stage repeat the thumbnails, so they are decorative here. */}
+              <div className="areas__photos" aria-hidden="true">
+                <div className="areas__frame">
+                  {areas.map((a) => {
+                    const img = media(areaImages[a.href].src)
+                    return (
+                      <span key={a.href} className="areas__photo">
+                        <Image src={img.src} alt="" width={img.w} height={img.h} sizes="(min-width: 1024px) 38vw, 1px" loading="lazy" />
+                      </span>
+                    )
+                  })}
+                </div>
+                <p className="areas__count tabular">
+                  <span className="areas__digits">
+                    {areas.map((a, i) => (
+                      <span key={a.href}>{i + 1}</span>
+                    ))}
+                  </span>
+                  <span>/ {areas.length}</span>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -86,15 +114,29 @@ export default function HomePage() {
           <div className="col-span-12 lg:col-span-8" data-reveal>
             <EventsCalendar events={events} />
           </div>
-          <div className="col-span-12 mt-6 border-t border-line pt-6 lg:col-span-8 lg:col-start-5">
-            <Image
-              src={eoe.src}
-              alt="Pronouns: She/Her/Hers. NYC Department of Youth & Community Development, Workforce Connect, Learn & Earn and RDRC. RDRC is an equal opportunity organization/program. Auxiliary aids and services are available upon request to individuals with disabilities. TTY: 1-800-662-1220 / Voice Relay: 1-800-421-1200."
-              width={eoe.w}
-              height={eoe.h}
-              sizes="368px"
-              className="w-[23rem] max-w-full"
-            />
+        </div>
+      </section>
+
+      {/* The funders and equal-opportunity notice. On rdrc.org this was a small picture of text;
+          here it is text, with the one logo the site has a clean copy of. */}
+      <section className="border-t border-line" aria-label="Equal opportunity notice">
+        <div className="wrap grid12 items-center gap-y-6 py-[var(--s-tight)]">
+          <div className="col-span-12 flex flex-wrap items-center gap-x-8 gap-y-4 lg:col-span-5" data-reveal>
+            <span className="shrink-0 bg-white p-3 shadow-[inset_0_0_0_1px_var(--line)]">
+              <Image src={dycd.src} alt="NYC Department of Youth & Community Development" width={Math.round((72 * dycd.w) / dycd.h)} height={72} className="h-[4.5rem] w-auto" />
+            </span>
+            <ul className="t-label flex flex-wrap gap-x-6 gap-y-1">
+              <li>Workforce Connect</li>
+              <li>Learn &amp; Earn</li>
+            </ul>
+          </div>
+          <div className="col-span-12 lg:col-span-7" data-reveal style={{ "--i": 1 } as React.CSSProperties}>
+            <p className="max-w-[40rem]">
+              <strong className="font-semibold text-violet">RDRC is an equal opportunity organization/program.</strong> Auxiliary aids and services are available upon request to individuals with disabilities.
+            </p>
+            <p className="tabular mt-2 text-muted">
+              <span className="whitespace-nowrap">TTY: <a href={site.tty.href} className="link">1-800-662-1220</a></span> / <span className="whitespace-nowrap">Voice Relay: <a href={site.voiceRelay.href} className="link">1-800-421-1220</a></span>
+            </p>
           </div>
         </div>
       </section>

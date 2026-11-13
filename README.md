@@ -66,6 +66,12 @@ Deliberate differences:
 - A few links were missing `mailto:` and did nothing. They work now.
 - The storefront pair on Commercial Revitalization is captioned "Before" and "After", from
   the image file names.
+- The home page showed its funders and equal-opportunity notice as a small picture of text
+  (an email signature image). It is now real text with the NYC DYCD logo. Three things to
+  know: the picture's first line, "Pronouns: She/Her/Hers", belonged to someone's signature
+  and was left out; "Workforce Connect" and "Learn & Earn" appear as names because the site
+  has no clean copies of those logos; and the picture gave the Voice Relay number as
+  1-800-421-1200 while the rest of rdrc.org says 1-800-421-1220, which is the one used.
 
 Not carried over as pages (none of them were linked from the site; old addresses redirect):
 

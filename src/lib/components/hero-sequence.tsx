@@ -9,7 +9,7 @@ const HOLD = 7000
 
 const loaded = (img: HTMLImageElement | null | undefined) => !!img && img.complete && img.naturalWidth > 0
 
-/** The home photo sequence. Each photograph arrives grey and the brass line restores it.
+/** The home photo sequence. Each photograph slides in over the last.
  *  It advances slowly by itself, can be paused or stepped, and holds still under reduced motion.
  *  A photograph is never shown before it has loaded, and the block never changes height. */
 export default function HeroSequence({ slides }: { slides: Slide[] }) {
@@ -76,7 +76,7 @@ export default function HeroSequence({ slides }: { slides: Slide[] }) {
             key={s.src}
             className="hero-seq__slide"
             data-state={i === index ? "current" : i === previous ? "previous" : "idle"}
-            // The opening photograph is simply there (grey, then restored); later ones wipe in over the last.
+            // The opening photograph is uncovered with the page; later ones slide in over the last.
             data-first={previous === null ? "" : undefined}
             aria-hidden={i !== index}
           >

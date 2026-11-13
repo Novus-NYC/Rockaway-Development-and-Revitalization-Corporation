@@ -24,7 +24,7 @@ export default function GalleryPage({ title, blocks, image, subject }: { title: 
             return (
               <li key={b.src + i}>
                 <Zoom src={m.src} w={m.w} h={m.h} alt={alt} className="w-full">
-                  <span className="frame revive aspect-[4/3]">
+                  <span className="frame settle aspect-[4/3]">
                     <Image src={m.src} alt={alt} width={360} height={Math.round((360 * m.h) / m.w)} />
                   </span>
                 </Zoom>

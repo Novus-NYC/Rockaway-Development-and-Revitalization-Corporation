@@ -9,10 +9,12 @@ type Props = {
   ratio?: string
   sizes: string
   caption?: React.ReactNode
-  /** Above the fold: load eagerly and play the restoring line with the page intro. */
+  /** Above the fold: load eagerly and uncover with the page intro. */
   intro?: boolean
-  /** "line" = the restoring line; "color" = color returns without the line; "none" = plain. */
-  reveal?: "line" | "color" | "none"
+  /** "unmask" = a cover lifts off the frame; "settle" = fades in place (many small images); "none" = plain. */
+  reveal?: "unmask" | "settle" | "none"
+  /** The picture drifts a little inside its frame as the page scrolls. For cropped photographs only. */
+  parallax?: boolean
   zoom?: boolean
   className?: string
   frameClassName?: string
@@ -20,13 +22,14 @@ type Props = {
 }
 
 /** A photograph in its frame, with an optional caption. Images are local files with known sizes. */
-export default function Photo({ src, alt, ratio, sizes, caption, intro, reveal = "line", zoom, className = "", frameClassName = "", contain }: Props) {
+export default function Photo({ src, alt, ratio, sizes, caption, intro, reveal = "unmask", parallax, zoom, className = "", frameClassName = "", contain }: Props) {
   const m = media(src)
   const frame = (
     <span
-      className={`${reveal === "line" ? "restore" : reveal === "color" ? "revive frame" : "frame"} ${frameClassName}`}
+      className={`${reveal === "unmask" ? "unmask" : reveal === "settle" ? "settle frame" : "frame"} ${frameClassName}`}
       style={{ aspectRatio: ratio ?? `${m.w} / ${m.h}` }}
-      data-intro={intro && reveal === "line" ? "" : undefined}
+      data-intro={intro && reveal === "unmask" ? "" : undefined}
+      data-parallax={parallax && !contain ? "" : undefined}
     >
       <Image
         src={m.src}

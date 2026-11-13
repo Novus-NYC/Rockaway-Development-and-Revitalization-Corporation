@@ -1,12 +1,9 @@
 import type { Metadata } from "next"
-import Image from "next/image"
 import Link from "next/link"
 import Words from "@/lib/components/words"
-import { media } from "@/lib/media"
+import Photo from "@/lib/components/photo"
 
 export const metadata: Metadata = { title: "Page not found", robots: { index: false } }
-
-const photo = media("/media/2019/04/page-slider-commercial.jpg")
 
 export default function NotFound() {
   return (
@@ -25,12 +22,15 @@ export default function NotFound() {
           <li><Link href="/contact-us/" className="btn btn--line">Contact Us</Link></li>
         </ul>
       </div>
-      {/* A photograph the restoring line has not reached yet. */}
-      <figure className="not-found-photo col-span-12 lg:col-span-5 lg:col-start-8" data-intro style={{ "--i": 2 } as React.CSSProperties}>
-        <span className="frame relative aspect-[3/2]">
-          <Image src={photo.src} alt="A plaza behind construction fencing, in black and white" width={photo.w} height={photo.h} sizes="(min-width: 1024px) 36vw, 54vw" loading="eager" fetchPriority="high" preload />
-        </span>
-      </figure>
+      <Photo
+        src="/media/2019/04/page-slider-commercial.jpg"
+        alt="A tree-lined plaza behind construction fencing"
+        ratio="3 / 2"
+        sizes="(min-width: 1024px) 36vw, 54vw"
+        intro
+        parallax
+        className="col-span-12 lg:col-span-5 lg:col-start-8"
+      />
     </div>
   )
 }

@@ -24,24 +24,24 @@ Three territories were considered.
 
 | | Idea | Anchor | O / F / Fe / P |
 |---|---|---|---|
-| A. Name | Revitalization, performed: every photograph arrives drained of color and a brass line sweeps across it, bringing the color back | the word in the name, and the Storefront Improvement Program's before and after | 3 / 5 / 5 / 2 |
+| A. Name | Revitalization, performed: photographs arrive grey and a line brings their color back | the word in the name | 3 / 5 / 5 / 2 |
 | B. Place | The eleven-mile peninsula as a single line that runs through the site | the geography | 4 / 4 / 2 / 1 |
-| C. Identity | The seal: a disc with a way cut through it, round against a square grid | the logo | 3 / 4 / 4 / 2 |
+| C. Identity | The seal: RDRC's violet disc is the stage the work appears on | the logo | 3 / 4 / 4 / 2 |
 
-A wins on fit and on being buildable without inventing anything. B needs a map we would have
-to draw and label (new information, and easy to get wrong for people who live there). C lends
-A its shapes: the disc is used as a quiet supergraphic and as the frame for people.
+A was built first and rejected in review: the grey-to-color sweep on photographs was not
+liked. B needs a map we would have to draw and label (new information). The site is built on **C**, with one thing kept from A: the sweep, now used
+between pages instead of on photographs.
 
 ```
-Idea:        A neighborhood coming back: photographs arrive grey and a brass line restores
-             their color, held together by RDRC's own violet seal and brass lettering.
-Metaphor:    Restoration. A storefront getting its sign, its awning and its paint back.
-Signature:   The restoring line: a brass hairline sweeps left to right across a photograph
-             and color follows it. Home hero sequence, then every content photo once.
+Idea:        RDRC's seal is the stage: its violet field and brass edge carry the visitor from
+             page to page, and the four areas of focus take their turn inside it.
+Metaphor:    A civic seal, and a fresh coat of paint crossing a wall.
+Signature:   Areas of focus. The violet section holds still while the page scrolls; each
+             area lights in turn, its photograph is drawn up over the last, the seal turns.
 Emotion:     Steady, proud, cared for.
-Motion verb: Restore. Sweep left to right like a fresh coat, then settle. Never bounce.
-Screenshot:  The home hero mid-sweep: the Beach 20th Street planting photo half grey and
-             half in bloom, the brass line between, the CEO's sentence set large in violet.
+Motion verb: Sweep, then settle. Never bounce.
+Screenshot:  The pinned stage: four area names in large serif on violet, one of them lit,
+             its photograph beside it, the seal turning behind.
 ```
 
 ## System
@@ -79,14 +79,14 @@ round for the seal and for people (portraits sit in discs).
 
 **Motion language**
 
-- One ease, `cubic-bezier(0.22, 0.8, 0.2, 1)`; 250 to 400 ms for interface, 700 to 1100 ms for
-  reveals.
-- Photographs: the restoring line (grey to color, left to right), once, when they enter.
-- Text: a short rise as it enters. Headings wipe up from their baseline.
-- Primary links answer with the same left to right sweep: buttons flood, nav underlines draw,
-  arrows travel, index thumbnails restore to color.
-- Built with CSS, one IntersectionObserver and the Web Animations API. No animation library,
-  no scroll listeners, no loops.
+- One ease, `cubic-bezier(0.22, 0.8, 0.2, 1)`, and a firmer one for sweeps; 250 to 400 ms for
+  interface, 700 to 1500 ms for reveals.
+- Photographs are uncovered: a cover in the frame's own color lifts off while the picture
+  settles from a slight enlargement. Always in full color.
+- Display type arrives word by word. Body text rises a little as it enters.
+- Primary links answer with a left to right sweep: buttons flood, underlines draw, arrows
+  travel.
+- Built with CSS, one IntersectionObserver and the Web Animations API. No animation library.
 
 ## Composition plan (one layout family per section)
 
@@ -94,8 +94,9 @@ round for the seal and for people (portraits sit in discs).
 Home
   hero        split frame: CEO quote at display size (cols 1-7), photo sequence with
               captions (cols 8-12) over the mist disc
-  areas       index list: four rows, serif names, thumbnails that restore on hover
+  areas       pinned stage on violet: four names (cols 1-7), one photograph (cols 8-12)
   events      calendar beside the list (shows "No Events" until events exist)
+  notice      funders and the equal-opportunity statement, as text
   footer      finale: the mission sentence large on violet, then contacts
 
 Program page  title + banner photo, sticky section index (cols 1-3), text (cols 4-8),
@@ -105,7 +106,7 @@ News          ledger grouped by year: date, title, excerpt, thumbnail; year filt
 Article       title, date, text column, flyer or photo beside it (click to enlarge)
 Supporters    logo wall on white tiles
 Resource      grouped document lists in disclosure sections
-404           a photograph the line has not reached yet
+404           plain: what happened, three ways back, one photograph
 ```
 
 ## Genericness test
@@ -113,35 +114,34 @@ Resource      grouped document lists in disclosure sections
 - Cream plus serif plus terracotta was the default pull. Changed to the logo's own violet and
   brass on a cool paper.
 - A rotating circular badge was the obvious use of the seal. Dropped: the seal stays still.
-- Card grid for the four programs. Changed to a typographic index whose thumbnails restore.
-- Fade-up on everything. Kept only for text; images use the restoring line.
+- Card grid for the four programs. Changed to a typographic index, then to the pinned stage.
+- Fade-up on everything. Kept only for text; photographs are uncovered instead.
 
 ## Decisions about motion and speed
 
-The first version held back hard. After review ("make it a little cooler") the motion was
-turned up one notch, all of it still built from the same idea: a line that passes and leaves
-things renewed.
+The first version held back hard. Two rounds of review turned the motion up ("make it a
+little cooler", then "parallax or scroll hijacking is fine, just make it make sense") and
+removed the grey-to-color effect. What is there now, and why each piece exists:
 
-- **The sweep between pages.** A violet panel with a brass edge crosses the screen like a
-  fresh coat and the next page is there when it has passed (about half a second each way,
-  while the page is fetched). The same panel lifts off the first page of a visit, once per
-  session. Back and forward, new-tab clicks, files, anchors and outside links are untouched.
-- **Display type arrives word by word**, each word rising out of its own mask: the home
-  quotation and every page title.
-- **Areas of focus sit on violet.** The row under the pointer keeps the light and its
-  photograph comes back to color; the other rows step back.
-- **The mission sentence inks in** word by word as the footer is reached, and a brass line
-  under the header tracks how far the page has been read. Both use CSS scroll timelines and
-  are simply static where a browser lacks them.
-- **Photographs** are greyed with a blend layer, not `backdrop-filter` (which ignores its
-  clip while animating in Chrome and made the first version flicker). In the home sequence a
-  photograph is never shown before it has loaded, and the caption block always has the height
-  of its longest caption, so nothing jumps.
-- **Still at rest**, apart from the home photo sequence (seven seconds a photograph, with
-  pause and step controls). No parallax, no scroll-jacking, native scrolling.
-- **Reduced motion:** no sweep, no reveals, no auto-advance; everything is simply there.
-- **Weight:** no animation library. Motion is CSS, one IntersectionObserver and the Web
-  Animations API for the sweep. The heaviest page is under 3 MB.
+- **The sweep between pages.** A violet panel with a brass edge and the seal crosses the
+  screen and the next page is there when it has passed (about half a second each way, while
+  the page is fetched). It also lifts off the first page of a visit, once per session. Back
+  and forward, new-tab clicks, files, anchors and outside links are untouched.
+- **Areas of focus is a pinned stage** (wide screens with scroll-timeline support). The
+  content is four parallel things, so the scroll steps through four beats: a row lights, its
+  photograph is drawn up over the previous one, the count turns over, the seal rotates a
+  notch. Roughly two screens of scrolling. Everywhere else it is a list with thumbnails.
+- **Parallax, in three places only:** the seal falls back behind the home opening, a page's
+  own header photograph drifts inside its frame like a view through a window, and the footer
+  seal rises as the footer arrives. Each one marks depth between a background and the content
+  in front of it; nothing floats for its own sake.
+- **Display type arrives word by word**; the mission sentence in the footer inks in as it is
+  scrolled into view; a brass line under the header tracks reading progress.
+- **The home photo sequence** changes every seven seconds, with pause and step controls. A
+  photograph is never shown before it has loaded and the caption block never changes height.
+- **Reduced motion:** no sweep, no pinning, no parallax, no auto-advance.
+- **Fallbacks:** the scroll-driven pieces use CSS scroll timelines. Browsers without them get
+  the same content, still.
 
 ## Decisions that affect content
 
