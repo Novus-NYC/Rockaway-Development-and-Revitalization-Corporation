@@ -1,0 +1,339 @@
+[
+ {
+  "t": "img",
+  "src": "/media/2025/09/rdrc-logo.webp",
+  "alt": "Image 1",
+  "href": "#details1"
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/Modern-commiunity-capital-logo.webp",
+  "alt": "Image 2",
+  "href": "#details2"
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/images.webp",
+  "alt": "Image 3",
+  "href": "#details3"
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/huge.webp",
+  "alt": "Image 4",
+  "href": "#details4"
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/download.webp",
+  "alt": "Image 5",
+  "href": "#details5"
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/images-1.webp",
+  "alt": "Image 6",
+  "href": "#details6"
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/Masterbrand-Logo_Newyorkcity_Horizontal_Red.webp",
+  "alt": "Image 7",
+  "href": "#details7"
+ },
+ {
+  "t": "img",
+  "src": "/media/2018/09/rdrc-logo.webp",
+  "alt": ""
+ },
+ {
+  "t": "h",
+  "c": [
+   "Rockaway Development & Revitalization Corporation"
+  ],
+  "level": 2
+ },
+ {
+  "t": "p",
+  "c": [
+   "Established in 1978, Rockaway Development & Revitalization Corporation, Incorporated (RDRC) is a 501(c)(3) corporation located in the Far Rockaway area of Southeast Queens. RDRC has a rich history in community economic development centered on small business development, youth and adult career and workforce, affordable housing and homeownership opportunities for all."
+  ]
+ },
+ {
+  "t": "p",
+  "c": [
+   "To learn more about us, click on: ",
+   {
+    "t": "a",
+    "href": "/",
+    "c": [
+     "Rockaway Development & Revitalization Corporation"
+    ]
+   }
+  ]
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/IMG_3200-scaled.webp",
+  "alt": ""
+ },
+ {
+  "t": "p",
+  "c": [
+   {
+    "t": "b",
+    "c": [
+     "Kevin Alexander, MPA"
+    ]
+   },
+   {
+    "t": "br"
+   },
+   "President & CEO"
+  ]
+ },
+ {
+  "t": "p",
+  "c": [
+   {
+    "t": "b",
+    "c": [
+     "Renee McWilliams"
+    ]
+   },
+   {
+    "t": "br"
+   },
+   "Chief Operating Officer"
+  ]
+ },
+ {
+  "t": "p",
+  "c": [
+   {
+    "t": "b",
+    "c": [
+     "Allison Jeffrey, MS.D."
+    ]
+   },
+   {
+    "t": "br"
+   },
+   "SEQBI Administrator"
+  ]
+ },
+ {
+  "t": "p",
+  "c": [
+   {
+    "t": "b",
+    "c": [
+     "Dr. Lola Ojomu-Kayoes"
+    ]
+   },
+   {
+    "t": "br"
+   },
+   "Project Coordinator"
+  ]
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/Modern-commiunity-capital-logo.webp",
+  "alt": ""
+ },
+ {
+  "t": "h",
+  "c": [
+   "Modern Community Capital"
+  ],
+  "level": 2
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/Bitmap.webp",
+  "alt": ""
+ },
+ {
+  "t": "p",
+  "c": [
+   "Demond Wilkerson, Lead SEQBI Instructor is the Chief Lending officer of Modern Community Capital. He is a commercial credit trained finance and banking veteran with over 20 years of experience with JP Morgan Asset management, Santander Bank and HSBC. His experience includes small business lending, economic development finance, implementing fintech lending programs for Community Development Financial Institutions (CDFI’s),commercial real estate, and tax credit advisory services."
+  ]
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/images-png.webp",
+  "alt": ""
+ },
+ {
+  "t": "h",
+  "c": [
+   "New York Small Business Development Centers"
+  ],
+  "level": 2
+ },
+ {
+  "t": "p",
+  "c": [
+   "New York Small Business Development Centers(SBDC’s) provide no-cost, confidential one-on-one business advisement, training, and research to small business owners and entrepreneurs throughout New York State. There are 20 SBDC’s located throughout New York State on SUNY and CUNY campuses."
+  ]
+ },
+ {
+  "t": "p",
+  "c": [
+   "To learn more about SBDC and the services it can over through its network click on: ",
+   {
+    "t": "a",
+    "href": "https://nysbdc.org/",
+    "c": [
+     "NYS Small Business Development Centers."
+    ]
+   }
+  ]
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/huge.webp",
+  "alt": ""
+ },
+ {
+  "t": "h",
+  "c": [
+   "York College Small Business Development Center"
+  ],
+  "level": 2
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/Bitmap-1.webp",
+  "alt": "",
+  "caption": [
+   "L to R: Brian Yueng, Senior Business Advisor, Harry Wells, Director, and Oswaldo Rengifo, Business Advisor"
+  ]
+ },
+ {
+  "t": "p",
+  "c": [
+   "Since 1988, The New York Small Business Development Center (NYSBDC) at York College has generated over $207 Million in economic impact through loans. Their expert advisers have worked with 15,437 businesses, creating, or saving 4,462 jobs. Learn how the York College SBDC can help you start a business and gain contracts in the public and private sectors by becoming a certified MWBE."
+  ]
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/download.webp",
+  "alt": ""
+ },
+ {
+  "t": "h",
+  "c": [
+   "Farmingdale State University Small Business Development Center"
+  ],
+  "level": 2
+ },
+ {
+  "t": "p",
+  "c": [
+   "The Farmingdale Small Business Development Center (SBDC) is located on the campus of Farmingdale State College and provides free, one-on-one business advising. This free technical assistance is available to anyone who wants to start a business or who already owns a business. Services range from answering startup and business structure questions to assisting with business plans, cash flow projections, marketing plans, and loan information."
+  ]
+ },
+ {
+  "t": "p",
+  "c": [
+   "To learn more about the Farmingdale State University SBDC click on: ",
+   {
+    "t": "a",
+    "href": "https://www.farmingdale.edu/small-business-development-center/",
+    "c": [
+     "Farmingdale State University Small Business Development Center"
+    ]
+   }
+  ]
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/images-1.webp",
+  "alt": ""
+ },
+ {
+  "t": "h",
+  "c": [
+   "Pace University Small Business Development Center"
+  ],
+  "level": 2
+ },
+ {
+  "t": "p",
+  "c": [
+   "Since 1986, the Pace University SBDC has worked directly with more than 20,100 small businesses, helping them to invest over $255 million in the area’s economy, and create or save over 10,600 jobs."
+  ]
+ },
+ {
+  "t": "p",
+  "c": [
+   "To learn more about the Pace University SBDC click: ",
+   {
+    "t": "a",
+    "href": "https://www.pacesbdc.org/",
+    "c": [
+     "Pace University Small Business Development Center."
+    ]
+   }
+  ]
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/Masterbrand-Logo_Newyorkcity_Horizontal_Red-png.webp",
+  "alt": ""
+ },
+ {
+  "t": "h",
+  "c": [
+   "About Resorts World New York City"
+  ],
+  "level": 2
+ },
+ {
+  "t": "p",
+  "c": [
+   "At over 1,086,000 square feet, Resorts World Casino New York City is the largest entertainment center in New York City’s metro area and the city’s only casino. Developed and operated by Malaysian-based Genting Group, the project is the first company-owned U.S. venture for the leading global leisure and hospitality corporation."
+  ]
+ },
+ {
+  "t": "p",
+  "c": [
+   {
+    "t": "a",
+    "href": "https://rwnewyork.com/",
+    "c": [
+     "Resorts World New York City (RWNYC)"
+    ]
+   },
+   " is the Big Apple’s only casino-hotel and has generated more than $4.5 billion for the State’s public education system since 2011. RWNYC fulfills the decades-long mission to turn the historic Aqueduct Racetrack into a gaming destination with approximately 6,500 slot machines and electronic table gaming. An average 5 million guests pass through RWNYC’s doors annually, where they enjoy an extraordinary gaming, entertainment, and dining experience. In 2021, the 400-room Hyatt Regency JFK Airport hotel at Resorts World New York City opened its doors — bringing the total investment at the site to $1.1 billion. Guests can choose from several dining options including RW Prime and Good Friends Noodle House. RWNYC is operated by the Genting Group, a global company founded in 1965, with destination resorts in the Catskills, Hudson Valley, Las Vegas, Bimini, Malaysia, Singapore, the Philippines, and the United Kingdom. Genting has more than 50 years of experience in the travel and leisure industry and collectively employs approximately 47,000 people while offering an unparalleled resort experience to over 50 million visitors a year worldwide."
+  ]
+ },
+ {
+  "t": "img",
+  "src": "/media/2025/09/Bitmap-2.webp",
+  "alt": ""
+ },
+ {
+  "t": "p",
+  "c": [
+   "To learn more about the Southeast Queens Business Incubator contact: Allison Jeffrey, SEQBI Administrator at ",
+   {
+    "t": "a",
+    "href": "mailto:ajeffrey@rdrc.org",
+    "c": [
+     "ajeffrey@rdrc.org"
+    ]
+   },
+   " or ",
+   {
+    "t": "a",
+    "href": "tel:7183275300",
+    "c": [
+     "718.327.5300"
+    ]
+   }
+  ]
+ }
+]

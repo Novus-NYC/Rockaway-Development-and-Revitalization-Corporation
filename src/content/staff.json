@@ -1,0 +1,216 @@
+[
+ {
+  "department": "Executive & Administrative",
+  "people": [
+   {
+    "name": "Kevin W. Alexander, MPA",
+    "titles": [
+     "President & Chief Executive Officer"
+    ],
+    "email": "kalexander@rdrc.org",
+    "extension": "1001"
+   },
+   {
+    "name": "LaVerne Jeffrey",
+    "titles": [
+     "Administrative Services Manager"
+    ],
+    "email": "ljeffrey@rdrc.org",
+    "extension": "1003"
+   },
+   {
+    "name": "Alan Chan, CPA",
+    "titles": [
+     "Director of Fiscal Operations"
+    ],
+    "email": "alanchan4@outlook.com"
+   },
+   {
+    "name": "Allison F. Jeffrey",
+    "titles": [
+     "Project Manager",
+     "South East Queens Business Incubator"
+    ],
+    "email": "ajeffrey@rdrc.org",
+    "extension": "1014"
+   },
+   {
+    "name": "Junor Barnett",
+    "titles": [
+     "Director Workforce & Career Development Services For Adults"
+    ],
+    "email": "jbarnett@rdrc.org",
+    "extension": "1005"
+   },
+   {
+    "name": "Lola Ojomu-Kayoes",
+    "titles": [
+     "Project Manager for Special Projects & Initiatives"
+    ],
+    "email": "kayoeslo@rdrc.org",
+    "extension": "1017"
+   }
+  ]
+ },
+ {
+  "department": "Education, Employment & Career Development Services For Youth",
+  "people": [
+   {
+    "name": "Renee McWilliams",
+    "titles": [
+     "Chief Operating Officer"
+    ],
+    "email": "pmcwilliams@rdrc.org",
+    "extension": "1002"
+   },
+   {
+    "name": "Kimberly Isaac",
+    "titles": [
+     "Director",
+     "EECDS Programs"
+    ],
+    "email": "kisaac@rdrc.org",
+    "extension": "1006"
+   },
+   {
+    "name": "Clifton Joseph",
+    "titles": [
+     "Program Manager",
+     "EECDS Programs"
+    ],
+    "email": "cjoseph@rdrc.org",
+    "extension": "1007"
+   },
+   {
+    "name": "Bibi Rahim",
+    "titles": [
+     "Program Associate",
+     "Case Manager"
+    ],
+    "email": "rahimb@rdrc.org",
+    "extension": "1016"
+   },
+   {
+    "name": "Ronaldo Hernandez",
+    "titles": [
+     "Program Associate"
+    ],
+    "email": "hernandezro@rdrc.org"
+   },
+   {
+    "name": "Tashera Tucker",
+    "titles": [
+     "Compliance Coordinator"
+    ],
+    "email": "tuckertas@rdrc.org",
+    "extension": "1008"
+   },
+   {
+    "name": "Melissa Lallbachan",
+    "titles": [
+     "Program Associate",
+     "Activity Specialist"
+    ],
+    "email": "lallbachanm@rdrc.org"
+   },
+   {
+    "name": "Davisha Valentine",
+    "titles": [
+     "Program Associate"
+    ],
+    "email": "valentined@rdrc.org",
+    "extension": "1010"
+   },
+   {
+    "name": "Daniel Austin",
+    "titles": [
+     "Assistant Program Coordinator"
+    ],
+    "email": "daustin@rdrc.org",
+    "extension": "1009"
+   }
+  ]
+ },
+ {
+  "department": "Adult Workforce & Career Development Services",
+  "people": [
+   {
+    "name": "Junor Barnett",
+    "titles": [
+     "Director"
+    ],
+    "email": "jbarnett@rdrc.org",
+    "extension": "1005"
+   },
+   {
+    "name": "Selene Pilgrim",
+    "titles": [
+     "Program Manager"
+    ],
+    "email": "pilgrims@rdrc.org",
+    "extension": "1012"
+   },
+   {
+    "name": "Douglas Woodall",
+    "titles": [
+     "Program Facilitator"
+    ],
+    "email": "dwoodall@rdrc.org",
+    "extension": "1013"
+   }
+  ]
+ },
+ {
+  "department": "Commercial Revitalization Services",
+  "people": [
+   {
+    "name": "Kevin W. Alexander, MPA",
+    "titles": [
+     "President & Chief Executive Officer"
+    ],
+    "email": "kalexander@rdrc.org",
+    "extension": "1001"
+   },
+   {
+    "name": "Junor Barnett",
+    "titles": [
+     "Director",
+     "Adult Workforce & Career Development"
+    ],
+    "email": "jbarnett@rdrc.org",
+    "extension": "1005"
+   },
+   {
+    "name": "Junor Barnett",
+    "titles": [
+     "Director",
+     "Neighborhood Preservation"
+    ],
+    "email": "jbarnett@rdrc.org",
+    "extension": "1005"
+   }
+  ]
+ },
+ {
+  "department": "Neighborhood Preservation Services",
+  "people": [
+   {
+    "name": "Junor Barnett",
+    "titles": [
+     "Director"
+    ],
+    "email": "jbarnett@rdrc.org",
+    "extension": "1005"
+   },
+   {
+    "name": "Douglas Woodall",
+    "titles": [
+     "Director",
+     "Program Associate HPD Housing Connect"
+    ],
+    "email": "dwoodall@rdrc.org",
+    "extension": "1013"
+   }
+  ]
+ }
+]

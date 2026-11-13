@@ -1,0 +1,317 @@
+/*!
+Theme Name: RDRC
+Theme URI: http://codup.io/
+Author: Codup
+Author URI: http://codup.io/
+Description: Description
+Version: 1.1.1.5
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: rdrc
+*/
+
+@import url('assets/css/reset.css');
+@import url('assets/css/layout.css');
+
+.fall-class-main-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fall-class-main-wrapper p{
+    flex-basis: 33.33%;
+}
+
+.seqbi-img-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.seqbi-img-wrapper.alter{
+	flex-direction:row-reverse;
+}
+
+.seqbi-img-wrapper figure {
+    flex-basis: calc(33% - 30px);
+}
+
+.seqbi-img-wrapper img {
+    max-width: calc(33% - 30px);
+	height: auto;
+}
+
+.seqbi-img-wrapper figure img{
+	max-width:100%;
+	padding-right: 0px;
+}
+
+.seqbi-img-wrapper.alter img{
+	padding-right: 0px;
+	padding-left:30px;
+}
+
+.seqbi-img-wrapper p {
+    flex-basis: 0%;
+}
+
+.seqbi-img-wrapper p.seqbi-para {
+    flex-basis: 67%;
+}
+
+.two-image-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 20px;
+}
+
+p.caption-text {
+    font-size: 1.2em;
+    padding: .8em 0;
+    color: #000080;
+}
+
+.content p i {
+    font-style: italic;
+}
+
+.partners-wrapper img {
+    max-width: 100%;
+}
+
+.partner-para-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.partner-para-wrapper p {
+    flex-basis: 50%;
+    text-align: center;
+}
+
+.partners-wrapper img.partner-logo {
+    max-width: 200px;
+}
+
+.partners-wrapper h2 {
+    font-family: Georgia, serif;
+    font-size: 2.7em;
+    color: #99540b;
+    text-transform: uppercase;
+    padding-bottom: .5em;
+    letter-spacing: .1em;
+}
+
+.partners-wrapper p {
+    text-align: justify;
+    color: #000080;
+    font-size: 1.8em;
+    padding: 0 0 1em 0;
+}
+
+.partners-wrapper p a{
+	color: #442384;
+}
+
+.partners-wrapper figure {
+    max-width: 100%;
+}
+
+.partners-wrapper img.partner-logo.alternate {
+    max-width: 500px;
+}
+
+li#menu-item-1556 ul.dropdown-menu {
+    background: linear-gradient(#e07b10, #99540b 100%) !important;
+}
+
+li#menu-item-1556:hover ul.dropdown-menu {
+    visibility: visible !important;
+}
+
+li#menu-item-1556 ul.dropdown-menu li a {
+	font-size: 1.05em;
+}
+
+/* header#main-header .contact-us-btn {
+    display: flex;
+    position: absolute;
+    right: 430px;
+    top: 70px;
+} */
+
+header#main-header .contact-us-btn a {
+    color: #fff;
+    padding: 1em;
+    font-size: 1.4em;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #442384;
+}
+
+header#main-header .contact-us-btn a:hover {
+    background: #582dad;
+}
+
+.mobile-show{
+	display:none;
+}
+
+.gslide-media .glightbox-desc {
+    display: block !important;
+}
+
+button.gprev.gbtn {
+    display: none;
+}
+
+button.gnext.gbtn {
+    display: none;
+}
+
+.rdrc-partners-lightbox-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px 0px;
+	justify-content: center;
+}
+
+.rdrc-partners-lightbox-grid a.glightbox {
+    flex-basis: 33.33%;
+}
+
+.rdrc-partners-lightbox-grid a.glightbox img.partner-logo {
+    max-width: 200px;
+}
+
+.partner-para-wrapper p {
+    text-align: center;
+}
+
+li#menu-item-1555 ul.dropdown-menu {
+    left: -71px;
+}
+
+.rdrc-donate-wrapper {
+    z-index: 299 !important;
+}
+
+.summer-class-wrapper p.fall-class-para {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.summer-class-wrapper p.fall-class-para strong {
+    flex-basis: 100%;
+    margin-top: 10px;
+}
+
+.summer-class-wrapper p.fall-class-para span {
+    flex-basis: 100%;
+}
+
+.summer-class-wrapper p.fall-class-para img {
+    flex-basis: 48%;
+    max-width: 48%;
+}
+
+figure.wp-caption img {
+    max-width: 100%;
+    width: 100%;
+}
+
+figure.wp-caption {
+    max-width: 100%;
+}
+
+.content .hot-spots {
+    padding: 1em 20px 0;
+}
+
+@media screen and (max-width:1600px){
+	li#menu-item-1555 ul.dropdown-menu {
+		left: 23px;
+	}
+	
+	li#menu-item-1556 ul.dropdown-menu li a {
+		white-space: unset;
+	}
+}
+
+@media screen and (max-width:1400px){
+	li#menu-item-1555 ul.dropdown-menu {
+		left: -12px;
+	}
+}
+
+@media screen and (max-width:1119px){
+	li#menu-item-1555 ul.dropdown-menu {
+        left: -40px;
+    }
+}
+
+@media screen and (max-width:1000px){
+	header#main-header .contact-us-btn{
+		display:none;
+	}
+	
+	.mobile-show{
+		display:block;
+	}
+	
+	section#mobile-menu-panel {
+		max-height: 100vh;
+		overflow: auto;
+	}
+	
+	#mobile-menu-panel #mobile-menu li.menu-item-1556 ul li a {
+		font-size: 1.2em;
+	}
+	
+	    #slider-placeholder {
+        margin-top: 0;
+    }
+	
+}
+
+@media screen and (max-width:999px){
+	.rdrc-covid-banner {
+		margin-top: 110px;
+	}
+}
+
+@media screen and (max-width:992px){
+    .fall-class-main-wrapper p{
+        flex-basis: 50%;
+    }
+}
+
+@media screen and (max-width:767px){
+    .fall-class-main-wrapper p{
+        flex-basis: 100%;
+    }
+	
+	.partners-wrapper img.partner-logo.alternate {
+		max-width: 100%;
+	}
+	
+	.rdrc-partners-lightbox-grid a.glightbox {
+		flex-basis: 50%;
+	}
+	
+	.seqbi-img-wrapper {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@media screen and (max-width:500px){
+	.rdrc-partners-lightbox-grid a.glightbox {
+		flex-basis: 100%;
+	}
+}

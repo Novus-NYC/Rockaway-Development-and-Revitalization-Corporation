@@ -1,62 +1,88 @@
-# Purpose
-This repository is the base template that should be used for all future businesses, including basic files such as navbar, footer, and other configs.
+# Rockaway Development & Revitalization Corporation
 
-# Business Name
+The website of RDRC, a community development corporation that has served the Rockaways
+since 1978. This is a rebuild of rdrc.org: the same information, pages and URLs, in a new
+design. The design reasoning is in [DESIGN.md](DESIGN.md).
 
-Replace this README with business-specific details.
+## Tech stack
 
----
-
-## 🚀 Overview
-
-Short description of the business and what this website is for.
-
-Example:
-"This website serves as the official online presence for [Business Name], showcasing services, contact information, and brand identity."
-
----
-
-## 🛠 Tech Stack
-
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
+- Next.js 16 (App Router), React 19, TypeScript
+- Tailwind CSS 3 with the brand tokens in `src/app/globals.css` and `tailwind.config.ts`
+- No animation library: motion is CSS plus one IntersectionObserver
+- Fonts (Zodiak, Switzer), images and PDFs are all served from this repository
 - Hosted on Vercel
 
----
-
-## 📂 Project Structure
-
-- `src/app` → App Router (homepage, layout, globals)
-- `src/app/pages` → Site pages (About, Contact, etc.)
-- `src/lib/components` → Shared UI components (Navbar/Footer)
-- `public` → Static assets
-
----
-
-## 🧑‍💻 Development
-
-Install dependencies:
+## Development
 
 ```bash
 npm install
-npm install --save-dev @types/react
+npm run dev        # http://localhost:3000
+npm run build      # production build (135 static pages)
+npm run start
 ```
 
-Run locally:
+## Where things live
 
-```bash
-npm run dev
-```
+| What | Where |
+|---|---|
+| Address, phone, email, social links, menus, the Donate link | `src/data/site.ts` |
+| Events for the home page calendar | `src/data/events.ts` |
+| News archive (107 posts) | `src/content/news.json` |
+| Long program pages (text carried over from rdrc.org) | `src/content/pages/*.json` |
+| Board, staff, supporters, SEQBI fellows | `src/content/board.json`, `staff.json`, `supporters.json`, `fellows.json` |
+| Images (296) and their sizes | `public/media/`, `src/content/media.json` |
+| PDFs | `public/documents/` |
+| Pages | `src/app/**/page.tsx` |
+| Shared components | `src/lib/components/` |
+| Redirects from old WordPress URLs | `next.config.ts` |
 
----
+### Common edits
 
-## ✏️ Customization Checklist
+- **Add an event:** add an entry to `src/data/events.ts`. It appears in the list and on the
+  calendar. With no entries the home page says "No Events", as rdrc.org does now.
+- **Add a news post:** add an object to the top of `src/content/news.json` (`slug`, `title`,
+  `date`, `excerpt`, `image`, `body`). Put the image in `public/media/` and add its width and
+  height to `src/content/media.json`.
+- **Change a staff or board member:** edit the JSON file. The pages rebuild from it.
+- **Donate link:** rdrc.org's "Donate Now" pointed back at its own home page. It now goes to
+  the contact page. When RDRC has a donation page, set `donateUrl` in `src/data/site.ts`.
 
-- [ ] Replace Business Name in navbar + footer
-- [ ] Update metadata in `src/app/layout.tsx`
-- [ ] Replace homepage content (`src/app/page.tsx`)
-- [ ] Update About + Contact pages (`src/app/pages/*`)
-- [ ] Replace favicon + assets in `public/`
-- [ ] Update SEO metadata
-- [ ] (Optional) Update Novus credit link text / URL in the footer
+## What changed from rdrc.org, and what did not
+
+Every page in the site menu and every news post was carried over with its wording intact. An
+automated check compared all 1,579 blocks of text and all 732 links on the original pages
+against the rebuilt pages: nothing is missing.
+
+Deliberate differences:
+
+- Headings and a handful of news titles that were written in capitals are set in title case.
+- The Google map moved from the footer of every page to the Contact page. The footer address
+  still links to Google Maps.
+- "Site by Webline Designs" is replaced by "Made by Novus".
+- The footer mission line read "Rockways"; it now reads "Rockaways", as on the About page.
+- On the SEQBI page one paragraph appeared twice in a row; it is shown once.
+- One staff email link pointed at a different address than the one printed
+  (`hernandezro@rdrc.org` linked to `dougalj@rdrc.org`). The link now matches the printed one.
+- A few links were missing `mailto:` and did nothing. They work now.
+- The storefront pair on Commercial Revitalization is captioned "Before" and "After", from
+  the image file names.
+
+Not carried over as pages (none of them were linked from the site; old addresses redirect):
+
+| Old page | Why | Now goes to |
+|---|---|---|
+| `/about-us-prev/` | an unlinked earlier draft of a page | `/about-us/` |
+| `/youth-services-2/` | an older copy of Youth Services | `/youth-services/` |
+| `/business-resources/` | empty placeholder | `/business-resource-center/` |
+| `/pdf-upload-test/` | a test page; its PDF is on Applications | `/applications/` |
+| `/locations/…`, `/my-bookings/`, `/categories/`, `/tags/` | pages generated by the events plugin | Contact or Home |
+
+The "Bank of America Award to RDRC" post (2019) lived outside the news archive on rdrc.org.
+It is now the oldest entry in RDRC News.
+
+## Before launch
+
+- [ ] Confirm the production domain in `src/data/site.ts` (`url`). Canonical links, the
+      sitemap and social cards read it.
+- [ ] Give RDRC's donation link to `donateUrl`, or confirm the contact page is right.
+- [ ] Ask RDRC to review the staff and board lists; they were copied as published.

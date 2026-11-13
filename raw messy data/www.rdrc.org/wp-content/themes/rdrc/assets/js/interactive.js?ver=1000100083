@@ -1,0 +1,50 @@
+var addClass, toggleMenu, togglePanel, fadeIn;
+
+
+//////Menu Events
+// var toggleMenu = function(){
+//   document.getElementById('open-menu-icon').classList.toggle("open");
+//   document.getElementById('nav-panel').classList.toggle("open");
+//   document.getElementById('page').classList.toggle("shrink");
+//   document.getElementById('nav-overlay').classList.toggle("show");
+// }
+
+
+var addClass = function (ele, cla) {
+    document.getElementById(ele).classList.toggle(cla);
+}
+
+var toggleMenu = function (menu) {
+    document.getElementById(menu).classList.toggle('activated');
+    console.log(menu);
+}
+
+var togglePanel = function (id) {
+    document.getElementById(id).classList.toggle('activated');
+}
+
+document.getElementById("open-panel-btn").addEventListener('click', function (e) {
+    e.preventDefault();
+    console.log("clicked");
+    if(jQuery(this).hasClass("activated") === false){
+        jQuery("body").css("overflow","hidden");
+    }else{
+        jQuery("body").css("overflow","unset");
+    }
+    addClass('mobile-menu-panel', 'activated');
+    addClass('open-panel-btn', 'activated');
+});
+
+
+var header1, header2, yPos;
+
+function yScroll() {
+    header1 = document.getElementById('main-header');
+    yPos = window.pageYOffset;
+    if (yPos > 200) {
+        header1.classList.add("scrolled");
+    } else {
+        header1.classList.remove("scrolled");
+    }
+}
+window.addEventListener("scroll", yScroll);
