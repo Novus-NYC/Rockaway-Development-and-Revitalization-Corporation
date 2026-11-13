@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Arrow } from "./icons"
 import type { ListBlock } from "@/lib/content"
 import { textOf } from "@/lib/content"
 
@@ -16,7 +17,7 @@ export default function LinkList({ lists }: { lists: ListBlock[] }) {
         const inner = (
           <>
             <span><span className="draw">{label}</span></span>
-            <span className={`arrow ${internal ? "" : "arrow--up"} text-brass-ink`} aria-hidden="true">{internal ? "→" : "↗"}</span>
+            <Arrow dir={internal ? "right" : "out"} className="text-brass-ink" />
           </>
         )
         return (

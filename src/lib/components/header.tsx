@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 import { aboutNav, areas, seqbiNav, site, type NavLink } from "@/data/site"
-import { SocialIcon } from "./icons"
+import { Arrow, SocialIcon } from "./icons"
 
 type PanelKey = "areas" | "seqbi" | "about"
 
@@ -83,7 +83,7 @@ export default function Header() {
       <div className="bg-violet text-paper">
         <div className="wrap flex min-h-9 flex-wrap items-center justify-between gap-x-6 gap-y-1 py-1.5 text-[0.8125rem] leading-snug">
           <Link href={site.announcement.href} className="group py-1 text-lilac transition-colors hover:text-paper">
-            <span className="draw">{site.announcement.text}</span> <span className="arrow" aria-hidden="true">→</span>
+            <span className="draw">{site.announcement.text}</span> <Arrow />
           </Link>
           <div className="hidden items-center gap-5 lg:flex">
             <a href={site.phone.href} className="draw tabular py-1">{site.phone.label}</a>

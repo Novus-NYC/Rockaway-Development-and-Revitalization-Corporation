@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Arrow } from "@/lib/components/icons"
 import PageHeader from "@/lib/components/page-header"
 import { fellowsPages } from "@/data/fellows"
 import { cohorts } from "@/data/site"
@@ -24,13 +25,13 @@ export default function Page() {
                   <li>
                     <Link href={c.href} className="group flex items-baseline justify-between gap-4 border-t border-line py-3.5">
                       <span><span className="draw">Fellows</span> <span className="tabular text-muted">({roster.roster.length})</span></span>
-                      <span className="arrow text-brass-ink" aria-hidden="true">→</span>
+                      <Arrow className="text-brass-ink" />
                     </Link>
                   </li>
                   <li>
                     <Link href={c.winnersHref} className="group flex items-baseline justify-between gap-4 border-y border-line py-3.5">
                       <span className="draw">Pitch Competition Winners</span>
-                      <span className="arrow text-brass-ink" aria-hidden="true">→</span>
+                      <Arrow className="text-brass-ink" />
                     </Link>
                   </li>
                 </ul>

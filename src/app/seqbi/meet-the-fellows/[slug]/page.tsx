@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { Arrow } from "@/lib/components/icons"
 import PageHeader from "@/lib/components/page-header"
 import { fellowsPages } from "@/data/fellows"
 import { media } from "@/lib/media"
@@ -75,7 +76,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               <li key={p.slug} className="border-t border-line">
                 <Link href={p.href} aria-current={p.slug === page.slug ? "page" : undefined} className="group flex items-baseline justify-between gap-4 py-3.5 aria-[current]:text-brass-ink">
                   <span className="draw">{p.title}</span>
-                  <span className="arrow text-brass-ink" aria-hidden="true">→</span>
+                  <Arrow className="text-brass-ink" />
                 </Link>
               </li>
             ))}

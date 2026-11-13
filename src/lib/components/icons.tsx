@@ -25,3 +25,20 @@ export function SocialIcon({ name }: { name: string }) {
 export function Seal({ className = "" }: { className?: string }) {
   return <span aria-hidden="true" className={`seal ${className}`} />
 }
+
+const ARROWS = {
+  right: "M1.5 8h12.25M9 3.25 13.75 8 9 12.75",
+  left: "M14.5 8H2.25M7 3.25 2.25 8 7 12.75",
+  out: "M3.75 12.25l8.5-8.5M5.25 3.75h7v7",
+  down: "M8 1.5v12.25M3.25 9 8 13.75 12.75 9",
+} as const
+
+/** Arrows are drawn, never typed. An arrow character is rendered by whatever font the device
+ *  falls back to, and on some systems that is a color emoji. */
+export function Arrow({ dir = "right", className = "" }: { dir?: keyof typeof ARROWS; className?: string }) {
+  return (
+    <svg className={`arrow arrow--${dir} ${className}`} viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+      <path d={ARROWS[dir]} />
+    </svg>
+  )
+}

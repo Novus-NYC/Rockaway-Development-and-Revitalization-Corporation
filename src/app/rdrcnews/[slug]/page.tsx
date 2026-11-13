@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { Arrow } from "@/lib/components/icons"
 import Photo from "@/lib/components/photo"
 import Words from "@/lib/components/words"
 import { Blocks } from "@/lib/components/rich"
@@ -103,7 +104,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             {post.external ? (
               <p className="!mt-8">
                 <a href={post.external} target="_blank" rel="noopener noreferrer" className="btn">
-                  {post.external.replace(/^https?:\/\//, "").replace(/\/$/, "")} <span className="arrow arrow--up" aria-hidden="true">↗</span>
+                  {post.external.replace(/^https?:\/\//, "").replace(/\/$/, "")} <Arrow dir="out" />
                 </a>
               </p>
             ) : null}
@@ -120,9 +121,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             p ? (
               <Link key={label} href={`/rdrcnews/${p.slug}/`} className={`group block border-t border-line py-5 ${label === "Older" ? "md:text-right" : ""}`}>
                 <span className={`t-label flex items-center gap-2 ${label === "Older" ? "md:justify-end" : ""}`}>
-                  {label === "Newer" ? <span aria-hidden="true">←</span> : null}
+                  {label === "Newer" ? <Arrow dir="left" /> : null}
                   {label}
-                  {label === "Older" ? <span className="arrow" aria-hidden="true">→</span> : null}
+                  {label === "Older" ? <Arrow /> : null}
                 </span>
                 <span className="t-h3 mt-2 block"><span className="draw">{p.title}</span></span>
                 <time dateTime={p.date} className="t-small tabular mt-1 block text-muted">{longDate(p.date)}</time>

@@ -44,6 +44,9 @@ npm run start
   `date`, `excerpt`, `image`, `body`). Put the image in `public/media/` and add its width and
   height to `src/content/media.json`.
 - **Change a staff or board member:** edit the JSON file. The pages rebuild from it.
+- **Arrows and other small icons:** use the drawn `Arrow` component in
+  `src/lib/components/icons.tsx`. Do not type arrow characters; some devices show them as
+  emoji.
 - **Donate link:** rdrc.org's "Donate Now" pointed back at its own home page. It now goes to
   the contact page. When RDRC has a donation page, set `donateUrl` in `src/data/site.ts`.
 
@@ -72,6 +75,11 @@ Deliberate differences:
   and was left out; "Workforce Connect" and "Learn & Earn" appear as names because the site
   has no clean copies of those logos; and the picture gave the Voice Relay number as
   1-800-421-1200 while the rest of rdrc.org says 1-800-421-1220, which is the one used.
+
+- The four "Areas of focus" photographs on the home page are the same pictures rdrc.org
+  uses, taken from RDRC's full-size uploads instead of the small 560 px tiles the home page
+  served (the Youth Services picture only exists at 550 px). They are in
+  `public/media/home/`; the crop point for each is set in `src/app/page.tsx`.
 
 Not carried over as pages (none of them were linked from the site; old addresses redirect):
 

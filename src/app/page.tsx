@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import EventsCalendar from "@/lib/components/events-calendar"
 import HeroSequence from "@/lib/components/hero-sequence"
-import { Seal } from "@/lib/components/icons"
+import { Arrow, Seal } from "@/lib/components/icons"
 import Words from "@/lib/components/words"
 import { events } from "@/data/events"
 import { areas, site } from "@/data/site"
@@ -16,11 +16,13 @@ const slides = [
   { src: "/media/2019/04/home-slider-04.jpg", caption: "2nd Annual Rockaways Caribbean Carnival Parade Co-Sponsored by RDRC - August 2018" },
 ].map((s) => ({ ...media(s.src), caption: s.caption }))
 
-const areaImages: Record<string, { src: string; alt: string }> = {
-  "/youth-services/": { src: "/media/home/area-youth-services.jpg", alt: "Young performers on stage at an RDRC event" },
-  "/workforce-development/": { src: "/media/home/area-workforce-development.webp", alt: "A student at a computer in the learning lab" },
-  "/neighborhood-preservation/": { src: "/media/home/area-neighborhood-preservation.jpg", alt: "A housing workshop in session" },
-  "/commercial-revitalization/": { src: "/media/home/area-commercial-revitalization.jpg", alt: "A commercial building on a Downtown Far Rockaway corner" },
+// The four photographs rdrc.org uses for its areas of focus (full-size originals, cropped by CSS;
+// `focus` is the point of each picture the crop keeps).
+const areaImages: Record<string, { src: string; alt: string; focus: string }> = {
+  "/youth-services/": { src: "/media/home/area-youth-services.jpg", alt: "Young performers on stage at an RDRC event", focus: "50% 50%" },
+  "/workforce-development/": { src: "/media/home/area-workforce-development.webp", alt: "A student at a computer in the learning lab", focus: "50% 60%" },
+  "/neighborhood-preservation/": { src: "/media/home/area-neighborhood-preservation.jpg", alt: "A housing workshop in session", focus: "50% 50%" },
+  "/commercial-revitalization/": { src: "/media/home/area-commercial-revitalization.jpg", alt: "A commercial building on a Downtown Far Rockaway corner", focus: "50% 50%" },
 }
 
 const dycd = media("/media/2019/05/NYC-DYCDLogo.webp")
@@ -51,56 +53,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Areas of focus. On a wide screen the section holds still while the page scrolls and the
-          four areas take their turn (CSS scroll timeline, see globals.css). Everywhere else it
-          is a plain list with thumbnails. */}
-      <section className="areas relative bg-violet text-paper" aria-labelledby="areas-heading">
-        <div className="areas__track">
-          <div className="areas__stage">
-            <Seal className="areas__seal pointer-events-none absolute -bottom-[22vw] -left-[14vw] w-[52vw] max-w-[46rem] text-[#3a2170] max-lg:hidden" />
-            <div className="areas__grid wrap relative">
-              <h2 id="areas-heading" className="areas__head t-h2 !text-paper" data-reveal="wipe">
-                <span className="wipe">Areas of focus</span>
-              </h2>
-              <ul className="areas__list">
-                {areas.map((a, i) => {
-                  const img = media(areaImages[a.href].src)
-                  return (
-                    <li key={a.href} data-reveal style={{ "--i": i } as React.CSSProperties}>
-                      <Link href={a.href} className="area-row group">
-                        <span className="area-row__name font-display text-[clamp(1.625rem,1.1rem+2.2vw,3.125rem)] leading-[1.06] tracking-[-0.02em]">{a.label}</span>
-                        <span className="area-row__thumb">
-                          <Image src={img.src} alt={areaImages[a.href].alt} width={224} height={156} />
-                        </span>
-                        <span className="arrow text-xl text-brass-light max-sm:hidden" aria-hidden="true">→</span>
-                      </Link>
-                    </li>
-                  )
-                })}
-              </ul>
-              {/* The large photographs of the stage repeat the thumbnails, so they are decorative here. */}
-              <div className="areas__photos" aria-hidden="true">
-                <div className="areas__frame">
-                  {areas.map((a) => {
-                    const img = media(areaImages[a.href].src)
-                    return (
-                      <span key={a.href} className="areas__photo">
-                        <Image src={img.src} alt="" width={img.w} height={img.h} sizes="(min-width: 1024px) 38vw, 1px" loading="lazy" />
+      {/* Areas of focus: four photographs across, each with the name of its area. All four are
+          in view together; nothing is pinned. */}
+      <section className="areas bg-violet text-paper" aria-labelledby="areas-heading">
+        <div className="wrap py-[var(--s-normal)]">
+          <h2 id="areas-heading" className="t-h2 !text-paper" data-reveal="wipe">
+            <span className="wipe">Areas of focus</span>
+          </h2>
+          <ul className="areas__list">
+            {areas.map((a, i) => {
+              const { src, alt, focus } = areaImages[a.href]
+              const img = media(src)
+              const [first, ...rest] = a.label.split(" ")
+              return (
+                <li key={a.href} style={{ "--i": i } as React.CSSProperties}>
+                  <Link href={a.href} className="area group">
+                    <span className="area__photo unmask">
+                      <Image src={img.src} alt={alt} width={img.w} height={img.h} sizes="(min-width: 900px) 23vw, 46vw" style={{ objectPosition: focus }} />
+                    </span>
+                    <span className="area__foot">
+                      <span className="area__name font-display">
+                        <span>{first}</span> <span>{rest.join(" ")}</span>
                       </span>
-                    )
-                  })}
-                </div>
-                <p className="areas__count tabular">
-                  <span className="areas__digits">
-                    {areas.map((a, i) => (
-                      <span key={a.href}>{i + 1}</span>
-                    ))}
-                  </span>
-                  <span>/ {areas.length}</span>
-                </p>
-              </div>
-            </div>
-          </div>
+                      <Arrow className="area__arrow" />
+                    </span>
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Arrow } from "@/lib/components/icons"
 import Words from "@/lib/components/words"
 import Photo from "@/lib/components/photo"
 
@@ -17,7 +18,7 @@ export default function NotFound() {
           The address may have changed when the site was rebuilt. Try one of these.
         </p>
         <ul className="mt-8 flex flex-wrap gap-3" data-intro style={{ "--i": 3 } as React.CSSProperties}>
-          <li><Link href="/" className="btn">Home <span className="arrow" aria-hidden="true">→</span></Link></li>
+          <li><Link href="/" className="btn">Home <Arrow /></Link></li>
           <li><Link href="/rdrcnews/" className="btn btn--line">RDRC News</Link></li>
           <li><Link href="/contact-us/" className="btn btn--line">Contact Us</Link></li>
         </ul>

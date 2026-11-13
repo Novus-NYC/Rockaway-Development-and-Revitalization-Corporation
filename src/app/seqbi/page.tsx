@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Flow } from "@/lib/components/flow"
+import { Arrow } from "@/lib/components/icons"
 import PageHeader from "@/lib/components/page-header"
 import Related from "@/lib/components/related"
 import type { Block } from "@/lib/content"
@@ -51,7 +52,7 @@ export default function Page() {
       >
         {flyer ? (
           <a href={flyer.href} target="_blank" rel="noopener noreferrer" className="btn">
-            {flyer.label} <span className="arrow" aria-hidden="true">↓</span>
+            {flyer.label} <Arrow dir="down" />
           </a>
         ) : null}
       </PageHeader>

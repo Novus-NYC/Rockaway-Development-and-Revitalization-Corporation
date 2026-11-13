@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Arrow } from "./icons"
 
 /** Closing links at the foot of a page: the related pages from the site menu. */
 export default function Related({ title = "Related", links }: { title?: string; links: { label: string; href: string }[] }) {
@@ -11,7 +12,7 @@ export default function Related({ title = "Related", links }: { title?: string; 
             <li key={l.href} className="border-t border-line">
               <Link href={l.href} className="group flex items-baseline justify-between gap-4 py-4">
                 <span className="t-h3"><span className="draw">{l.label}</span></span>
-                <span className="arrow text-brass-ink" aria-hidden="true">→</span>
+                <Arrow className="text-brass-ink" />
               </Link>
             </li>
           ))}

@@ -1,3 +1,5 @@
+import { Arrow } from "./icons"
+
 export type Doc = { label: string; href: string; note?: string }
 
 const isFile = (href: string) => href.startsWith("/documents/")
@@ -14,7 +16,7 @@ export default function DocList({ docs, className = "" }: { docs: Doc[]; classNa
             </span>
             <span className="t-label flex items-baseline gap-3 whitespace-nowrap">
               {d.note ?? (isFile(d.href) ? "PDF" : "Link")}
-              <span className={`arrow ${isFile(d.href) ? "" : "arrow--up"} text-base`} aria-hidden="true">{isFile(d.href) ? "↓" : "↗"}</span>
+              <Arrow dir={isFile(d.href) ? "down" : "out"} className="text-base" />
             </span>
           </a>
         </li>

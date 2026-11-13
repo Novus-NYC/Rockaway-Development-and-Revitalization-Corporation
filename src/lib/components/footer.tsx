@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { footerMore, footerNav, site } from "@/data/site"
-import { Seal } from "./icons"
+import { Arrow, Seal } from "./icons"
 import Words from "./words"
 
 export default function Footer() {
@@ -26,7 +26,7 @@ export default function Footer() {
               </a>
             </address>
             <Link href={site.donateUrl} className="btn btn--light mt-6">
-              Donate <span className="arrow" aria-hidden="true">→</span>
+              Donate <Arrow />
             </Link>
           </div>
 
@@ -63,13 +63,13 @@ export default function Footer() {
               {site.social.map((s) => (
                 <li key={s.label}>
                   <a href={s.href} target="_blank" rel="noopener noreferrer" className="group draw">
-                    {s.label} <span className="arrow arrow--up" aria-hidden="true">↗</span>
+                    {s.label} <Arrow dir="out" />
                   </a>
                 </li>
               ))}
               <li className="mt-2">
                 <a href={site.newsletterUrl} target="_blank" rel="noopener noreferrer" className="group draw">
-                  Newsletter Sign Up <span className="arrow arrow--up" aria-hidden="true">↗</span>
+                  Newsletter Sign Up <Arrow dir="out" />
                 </a>
               </li>
             </ul>

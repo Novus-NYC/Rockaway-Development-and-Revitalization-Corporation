@@ -34,14 +34,14 @@ between pages instead of on photographs.
 
 ```
 Idea:        RDRC's seal is the stage: its violet field and brass edge carry the visitor from
-             page to page, and the four areas of focus take their turn inside it.
+             page to page, and the work appears on it.
 Metaphor:    A civic seal, and a fresh coat of paint crossing a wall.
-Signature:   Areas of focus. The violet section holds still while the page scrolls; each
-             area lights in turn, its photograph is drawn up over the last, the seal turns.
+Signature:   The sweep between pages. A violet panel with a brass edge and the seal crosses
+             the screen, and the next page is there when it has passed.
 Emotion:     Steady, proud, cared for.
 Motion verb: Sweep, then settle. Never bounce.
-Screenshot:  The pinned stage: four area names in large serif on violet, one of them lit,
-             its photograph beside it, the seal turning behind.
+Screenshot:  The home opening: the CEO's sentence at display size beside the photo sequence,
+             the seal behind it, the four areas of focus on violet below.
 ```
 
 ## System
@@ -94,7 +94,8 @@ round for the seal and for people (portraits sit in discs).
 Home
   hero        split frame: CEO quote at display size (cols 1-7), photo sequence with
               captions (cols 8-12) over the mist disc
-  areas       pinned stage on violet: four names (cols 1-7), one photograph (cols 8-12)
+  areas       four photographs across on violet, each with the name of its area (two by two
+              on a phone); all four in view at once
   events      calendar beside the list (shows "No Events" until events exist)
   notice      funders and the equal-opportunity statement, as text
   footer      finale: the mission sentence large on violet, then contacts
@@ -114,23 +115,30 @@ Resource      grouped document lists in disclosure sections
 - Cream plus serif plus terracotta was the default pull. Changed to the logo's own violet and
   brass on a cool paper.
 - A rotating circular badge was the obvious use of the seal. Dropped: the seal stays still.
-- Card grid for the four programs. Changed to a typographic index, then to the pinned stage.
+- The four programs. A typographic index with thumbnails, then a pinned scroll stage (one
+  large photograph at a time), were both built; the stage was rejected in review. Final: four
+  photographs across with the names set large beneath, no card boxes, no shadows, no radius.
 - Fade-up on everything. Kept only for text; photographs are uncovered instead.
 
 ## Decisions about motion and speed
 
-The first version held back hard. Two rounds of review turned the motion up ("make it a
-little cooler", then "parallax or scroll hijacking is fine, just make it make sense") and
-removed the grey-to-color effect. What is there now, and why each piece exists:
+The first version held back hard. Review turned the motion up ("make it a little cooler",
+then "parallax or scroll hijacking is fine, just make it make sense"), removed the
+grey-to-color effect, and then removed the pinned Areas of focus stage that followed. What is
+there now, and why each piece exists:
 
 - **The sweep between pages.** A violet panel with a brass edge and the seal crosses the
   screen and the next page is there when it has passed (about half a second each way, while
   the page is fetched). It also lifts off the first page of a visit, once per session. Back
   and forward, new-tab clicks, files, anchors and outside links are untouched.
-- **Areas of focus is a pinned stage** (wide screens with scroll-timeline support). The
-  content is four parallel things, so the scroll steps through four beats: a row lights, its
-  photograph is drawn up over the previous one, the count turns over, the seal rotates a
-  notch. Roughly two screens of scrolling. Everywhere else it is a list with thumbnails.
+- **Areas of focus does not pin.** Four photographs sit side by side with their names, so a
+  visitor sees every program at once. On wide screens the four columns come up the page as a
+  shallow stair and settle into one line; the covers lift off the photographs left to right.
+  Pointing at one draws its hairline in brass, moves its arrow and steps the other names back.
+  The photographs are RDRC's full-size originals, shown no larger than their pixels allow
+  (the Youth Services one only exists at 550 px wide).
+- **Arrows are drawn icons** (`Arrow` in `icons.tsx`), never typed characters. A typed arrow
+  is rendered by whatever font the device falls back to, on some systems a color emoji.
 - **Parallax, in three places only:** the seal falls back behind the home opening, a page's
   own header photograph drifts inside its frame like a view through a window, and the footer
   seal rises as the footer arrives. Each one marks depth between a background and the content
@@ -139,7 +147,7 @@ removed the grey-to-color effect. What is there now, and why each piece exists:
   scrolled into view; a brass line under the header tracks reading progress.
 - **The home photo sequence** changes every seven seconds, with pause and step controls. A
   photograph is never shown before it has loaded and the caption block never changes height.
-- **Reduced motion:** no sweep, no pinning, no parallax, no auto-advance.
+- **Reduced motion:** no sweep, no parallax, no stair, no auto-advance.
 - **Fallbacks:** the scroll-driven pieces use CSS scroll timelines. Browsers without them get
   the same content, still.
 
